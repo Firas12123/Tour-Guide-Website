@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+header {
+    background-color: #d13044;
+    padding: 2rem 0;
+}
+
+
+.main-title{
+    color: white;
+    text-align: center;
+    margin: 0;
+    font-size: 2.5rem;
+}
