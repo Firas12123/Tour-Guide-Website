@@ -2,9 +2,15 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def home():
-    return render_template("index.html")
+    tours_data = [
+        {"title": "Cartage Ruins", "location": "Tunis", "price": {"English": "£40", "German": "€50"}},
+        {"title": "Roman Theatre of Cartage", "location": "Tunis", "price": {"English": "£45", "German": "€50"}},
+        {"title": "Sidi Bou Said", "location": "Coastal", "price": {"English": "£42", "German": "€50"}},
+    ]
+    return render_template("index.html", tours = tours_data)
 
 @app.route("/tours")
 def tours():

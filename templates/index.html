@@ -12,8 +12,14 @@
 {% block content %}
 <main>
     <a class ="main-title main-font" href = "{{ url_for('booking') }}"> Book A Tour Today! </a>
-    <section>
-        <h2>Example</h2>
+    <section class ="tour-grid">
+        {% for tour in tours %}
+        <div class ="tour-card">
+            <h2 class ="tour-title main-font">{{tour.title}}</h2>
+            <p class="tour-location main-font">{{tour.location}}</p>
+            <p class="tour-price main-font">{{tour.price["English"]}}</p>
+        </div>
+        {% endfor %}
     </section>
 </main>
 

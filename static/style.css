@@ -10,11 +10,11 @@ body {
     font-family: 'Inter', sans-serif;
     letter-spacing: -1px;
     font-weight: 600;
-    color: #0D97D4;
+    color: #1a2530;
 }
 
 .action-button{
-    color: #1a2530;
+    color: #0077b6;
 }
 
 html, body{
@@ -66,8 +66,45 @@ html, body{
 }
 
 .teleporters:hover{
-    color: #0B7DB0;
+    color: #19222B;
     transform: scale(1.08);
+}
+
+.tour-grid{
+    display: grid;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.tour-card{
+    display: inline-block;
+    padding-top: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: solid;
+    border-width: 1px;
+    max-width: 1200px;
+}
+
+.tour-title{
+    text-align: center;
+    margin: -5px;
+    margin-bottom: 30px;
+}
+
+.lang-selector{
+    display: flex;
+    margin-left: auto;
+}
+
+.lang-button{
+    border-radius: 12px;
+    padding: 7px;
+    cursor: pointer;
+    margin-right: 140px;
 }
 
 main {
@@ -78,16 +115,18 @@ main {
     display: block;
     margin-bottom: 10px;
     text-align: center;
-    padding-top: 0px;
+    padding-bottom: 0px;
     text-decoration: none;
     width: fit-content;
     margin: 0 auto;
+    margin-bottom: 40px;
     font-size: 2.5rem;
     transition: transform 0.2s ease, color 0.2s ease;
+
 }
 
 .main-title:hover{
-    color: #0B7DB0;
+    color: #263861;
     transform: scale(1.06);
 }
 
@@ -106,7 +145,7 @@ footer{
 .linkedin-btn{
     text-align: right;
     border-width: 2px;
-    color: #0077b6;
+    color: #1a2530;
     border-radius: 8px;
     padding: 4px;
     text-decoration: none;
