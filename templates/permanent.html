@@ -22,6 +22,9 @@
         </div>
         <div class = "lang-selector">
             <button class = "lang-button main-font">Select tour language</button>
+                {% for language, attributes in languages.items() %}
+                    <button class ="lang-dropdown"></button>
+                {% endfor %}
         </div>
     </nav>
 </header>

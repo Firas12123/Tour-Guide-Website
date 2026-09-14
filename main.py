@@ -1,8 +1,14 @@
 from flask import Flask, render_template
 
+languages = {"EN": {"English"},
+             "GE": {"German"},
+             "TU": {"Tunisian"},
+             "AR": {"Arabic"}}
 app = Flask(__name__)
 
-
+@app.context_processor
+def inject_global():
+    return {"languages":  languages}
 @app.route("/")
 def home():
     tours_data = [

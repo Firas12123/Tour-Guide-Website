@@ -95,14 +95,18 @@ html, body{
     margin-bottom: 30px;
 }
 
+.tour-price{
+
+}
+
 .lang-selector{
     display: flex;
     margin-left: auto;
 }
 
 .lang-button{
-    border-radius: 12px;
-    padding: 7px;
+    border-radius: 9px;
+    padding: 8px;
     cursor: pointer;
     margin-right: 140px;
 }
