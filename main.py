@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.context_processor
 def inject_global():
-    return {"languages":  languages}
+    return {"language":  languages}
 @app.route("/")
 def home():
     tours_data = [

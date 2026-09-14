@@ -4,8 +4,16 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #ffffff;
-
 }
+
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin-inline: auto;
+    border: 10px red;
+    box-sizing: border-box;
+}
+
 .main-font{
     font-family: 'Inter', sans-serif;
     letter-spacing: -1px;
@@ -79,6 +87,8 @@ html, body{
     gap: 24px;
 }
 
+
+
 .tour-card{
     display: inline-block;
     padding-top: 15px;
@@ -100,15 +110,63 @@ html, body{
 }
 
 .lang-selector{
+    position: relative;
+    align-items: center;
+    display: inline-block;
+    margin-left: auto;
+}
+
+.lang-dropdown{
+    position: absolute;
+    top: calc(100% + 8px);
+    min-width: 100%;
+    right: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.3s ease, transform 0.5s ease, visibility 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    border-radius: 9px;
+    background: white;
+    border: 1.5px solid grey;
+}
+
+.lang-item{
     display: flex;
     margin-left: auto;
 }
 
-.lang-button{
+.lang-selector:hover .lang-dropdown{
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+
+}
+
+.lang-selector:hover .arrow-icon{
+    transform: rotate(180deg);
+}
+
+.arrow-icon{
+    transition: transform 0.6s ease;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.lang-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     border-radius: 9px;
     padding: 8px;
     cursor: pointer;
-    margin-right: 140px;
+    background: transparent;
+    border: 1.5px solid grey;
 }
 
 main {
@@ -116,14 +174,12 @@ main {
 }
 
 .main-title{
-    display: block;
-    margin-bottom: 10px;
-    text-align: center;
-    padding-bottom: 0px;
-    text-decoration: none;
-    width: fit-content;
-    margin: 0 auto;
+    display: table;
     margin-bottom: 40px;
+    margin-inline: auto;
+    align-items: center;
+    padding-bottom: 10px;
+    text-decoration: none;
     font-size: 2.5rem;
     transition: transform 0.2s ease, color 0.2s ease;
 

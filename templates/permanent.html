@@ -21,10 +21,17 @@
             <a class ="teleporters main-font" href ="{{ url_for('contact') }}">Contact</a>
         </div>
         <div class = "lang-selector">
-            <button class = "lang-button main-font">Select tour language</button>
-                {% for language, attributes in languages.items() %}
-                    <button class ="lang-dropdown"></button>
+            <button class = "lang-button main-font" type="button">
+                <span class ="main-font">English · £</span>
+                <svg class = "arrow-icon" viewBox ="0 0 24 24" width = "14" height = "14" stroke ="currentColor" stroke-width ="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </button>
+            <div class ="lang-dropdown">
+                {% for languages, attributes in language.items() %}
+                    <button class ="lang-item">{{ languages }}</button>
                 {% endfor %}
+            </div>
         </div>
     </nav>
 </header>
