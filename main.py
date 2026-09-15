@@ -1,14 +1,30 @@
-from flask import Flask, render_template
+from flask import Flask, redirect, render_template, session, request
+import os
+from dotenv import load_dotenv
 
 languages = {"EN": ["English"],
-             "DE": ["German"],
-             "AEB": ["Tunisian"],
-             "AR": ["Arabic"]}
+             "DE": ["Deutsch"],
+             "AEB": ["تونسي"],
+             "AR": ["العربية"],
+             "FR": ["Français"]
+             }
 app = Flask(__name__)
+load_dotenv()
+app.secret_key = os.getenv("flask_secret_key")
+default_lang = "EN"
+
+@app.route("/set_langauge/<lang>")
+def set_language(lang):
+    if lang in languages.keys():
+        session["lang"] = lang
+    return redirect(request.referrer or "/")
 
 @app.context_processor
 def inject_global():
-    return ({"language":  languages})
+    active_lang = session.get("lang", default_lang)
+    return {"language":  languages,
+            "active_lang": active_lang,
+            "lang_info": languages.get(active_lang, languages["EN"])}
     
 @app.route("/")
 def home():

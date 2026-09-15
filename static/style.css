@@ -87,8 +87,6 @@ html, body{
     gap: 24px;
 }
 
-
-
 .tour-card{
     display: inline-block;
     padding-top: 15px;
@@ -110,10 +108,12 @@ html, body{
 }
 
 .lang-selector{
+    display: inline-block;
     position: relative;
     align-items: center;
-    display: inline-block;
     margin-left: auto;
+    width: 150px;
+    transition: transform 0.2s ease;
 }
 
 .lang-dropdown{
@@ -121,6 +121,7 @@ html, body{
     top: calc(100% + 8px);
     min-width: 100%;
     right: 0;
+    overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     z-index: 50;
     opacity: 0;
@@ -129,31 +130,44 @@ html, body{
     transition: opacity 0.3s ease, transform 0.5s ease, visibility 0.5s ease;
     display: flex;
     flex-direction: column;
-    border-radius: 2px;
+    border-radius: 9px;
     background: white;
-    border: solid 1.5px black;
+    border: 1.5px solid grey;
 }
 
 .lang-item{
-    padding: 7px 1px;
+    padding: 4px 3px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 13px;
+    position: relative;
+    width: 100%;
     cursor: pointer;
-    display: inline-block;
     background-color: white;
-    border: 0px;
-    transition: transform 0.2s ease;
+    margin: 0;
+    border: 0;
+
 }
 
 .lang-item:hover {
-    transform: scale(1.05)
-
+    outline: none;
+    background-color: #f2f0f0;
+    transform: scale(1.04);
 }
 
-.lang-selector:hover .lang-dropdown{
+
+.lang-selector:hover,
+.lang-selector:focus-within{
+    border: 1.5px grey;
+    transform: scale(1.07)
+}
+
+.lang-selector:hover .lang-dropdown,
+.lang-selector:focus-within .lang-dropdown{
     display: flex;
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-
 }
 
 .lang-selector:hover .arrow-icon{
@@ -167,7 +181,10 @@ html, body{
 }
 
 .lang-button {
-    display: inline-flex;
+    animation: smoothZoomIn 0.15s ease-out;
+    will-change: transform, opacity;
+    display: flex;
+    width: 100%;
     align-items: center;
     justify-content: center;
     gap: 8px;
@@ -220,4 +237,15 @@ footer{
     text-decoration: none;
     cursor: pointer;
     display: inline-flex;
+}
+
+@keyframes smoothZoomIn{
+    0% {
+        opacity: 0;
+        transform: scale(0.99);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
