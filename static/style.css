@@ -135,9 +135,17 @@ html, body{
 }
 
 .lang-item{
+    padding: 7px 1px;
+    cursor: pointer;
     display: inline-block;
     background-color: white;
     border: 0px;
+    transition: transform 0.2s ease;
+}
+
+.lang-item:hover {
+    transform: scale(1.05)
+
 }
 
 .lang-selector:hover .lang-dropdown{
