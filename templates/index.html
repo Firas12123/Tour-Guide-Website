@@ -17,7 +17,8 @@
         <div class ="tour-card">
             <h2 class ="tour-title main-font">{{tour.title}}</h2>
             <p class="tour-location main-font">{{tour.location}}</p>
-            <p class="tour-price main-font">from {{tour.price["English"]}}</p>
+            <p class="tour-price main-font">from {{tour.price[active_lang] }}</p>
+            <p> remember to fix the columns to align items next time </p>
         </div>
         {% endfor %}
     </section>

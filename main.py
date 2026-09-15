@@ -9,6 +9,7 @@ languages = {"EN": ["English"],
              "FR": ["Français"]
              }
 app = Flask(__name__)
+
 load_dotenv()
 app.secret_key = os.getenv("flask_secret_key")
 default_lang = "EN"
@@ -29,9 +30,9 @@ def inject_global():
 @app.route("/")
 def home():
     tours_data = [
-        {"title": "Cartage Ruins", "location": "Tunis", "price": {"English": "£40", "German": "€50"}},
-        {"title": "Roman Theatre of Cartage", "location": "Tunis", "price": {"English": "£45", "German": "€50"}},
-        {"title": "Sidi Bou Said", "location": "Coastal", "price": {"English": "£42", "German": "€50"}},
+        {"title": "Cartage Ruins", "location": "Tunis", "price": {"EN": "£40", "DE": "€50"}},
+        {"title": "Roman Theatre of Cartage", "location": "Tunis", "price": {"EN": "£45", "DE": "€50"}},
+        {"title": "Sidi Bou Said", "location": "Coastal", "price": {"EN": "£42", "DE": "€50"}},
     ]
     return render_template("index.html", tours = tours_data)
 

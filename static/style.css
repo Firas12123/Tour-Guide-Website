@@ -88,7 +88,6 @@ html, body{
 }
 
 .tour-card{
-    display: inline-block;
     padding-top: 15px;
     padding-left: 30px;
     padding-right: 30px;
@@ -104,7 +103,9 @@ html, body{
 }
 
 .tour-price{
-
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
 }
 
 .lang-selector{
@@ -212,7 +213,7 @@ main {
 }
 
 .main-title:hover{
-    color: #263861;
+    color: #041f29;
     transform: scale(1.06);
 }
 
@@ -242,7 +243,7 @@ footer{
 @keyframes smoothZoomIn{
     0% {
         opacity: 0;
-        transform: scale(0.99);
+        transform: scale(0.97);
     }
     100% {
         opacity: 1;
