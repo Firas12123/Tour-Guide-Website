@@ -20,6 +20,10 @@ load_dotenv()
 app.secret_key = os.getenv("flask_secret_key")
 default_lang = "EN"
 
+@app.errorhandler(404)
+def not_found_error(error):
+    return render_template('not-found.html')
+
 @app.route("/set_langauge/<lang>")
 def set_language(lang):
     if lang in languages.keys():
