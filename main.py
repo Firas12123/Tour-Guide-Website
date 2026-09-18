@@ -34,7 +34,7 @@ def set_language(lang):
 def tour_destination(tour_name):
     for dict in tours_data:
         if tour_name in dict.values():
-            return render_template("tour-card.html", tour= tour_name)
+            return render_template("tour-card.html", tour= tour_name, details= dict )
     return render_template("not-found.html")
 
 @app.context_processor

@@ -328,3 +328,9 @@ footer{
     margin: 0 0 24px 0;
 
 }
+
+.big-tour-card{
+    border: black solid 1px;
+    border-radius: 7px;
+    margin: 25px 100px;
+}
