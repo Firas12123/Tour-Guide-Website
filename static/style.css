@@ -7,11 +7,26 @@ body {
 }
 
 .container{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
     max-width: 1200px;
-    width: 90%;
-    margin-inline: auto;
-    border: 10px red;
-    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.sidebar{
+    grid-column: 3;
+}
+
+
+.home-logo{
+    text-decoration: none;
+    font-size: 40px;
+    padding: 8px;
+    border-radius: 1rem;
+    margin-left: 20px;
+    margin-right: auto;
+    align-items: start;
 }
 
 .main-font{
@@ -31,25 +46,21 @@ html, body{
     min-height: 100vh;
 }
 
-
+.my-name{
+    padding: 0px;
+    margin-left: 20px;
+}
 
 .navbar{
     display: flex;
     align-items: center;
     background-color: #ffffff;
     position: relative;
-    padding: 1rem 2rem;
+    padding: 1rem 0rem;
     margin-bottom: 30px;
     border-color: #222222;
     border-bottom: solid;
     border-width: 0.06rem;
-}
-
-.home-logo{
-    text-decoration: none;
-    font-size: 40px;
-    padding: 8px;
-    border-radius: 1rem;
 }
 
 .nav-links{
@@ -88,27 +99,63 @@ html, body{
 }
 
 .tour-card{
+    display: flex;
+    flex-direction: column;
     padding-top: 15px;
     padding-left: 30px;
     padding-right: 30px;
-    border: solid;
+    cursor: pointer;
+    border-radius: 26px;
+    border: black solid;
     border-width: 1px;
-    max-width: 1200px;
+    background-color: transparent;
+    transition: transform 0.2s ease;
+    text-decoration: none;
+}
+
+.tour-card:hover{
+    transform: scale(1.05);
+}
+
+.tour-location{
+    text-align: right;
+    text-decoration: none;
+    margin-right: auto;
+    }
+
+.tour-details{
+    display: flex;
+    text-decoration: none;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-top: auto;
+    width: 100%;
+}
+
+.tour-text{
+    font-size: 15px;
+    text-decoration: none;
 }
 
 .tour-title{
     text-align: center;
-    margin: -5px;
-    margin-bottom: 30px;
+    text-decoration: none;
 }
 
 .tour-price{
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
+    margin-left: auto;
+    text-align: right;
+    color: #303030;
+    text-decoration: none;
+}
+
+.from-text{
+    color: #3b3838;
+
 }
 
 .lang-selector{
+    margin-right: 35px;
     display: inline-block;
     position: relative;
     align-items: center;
@@ -137,7 +184,7 @@ html, body{
 }
 
 .lang-item{
-    padding: 4px 3px;
+    padding: 4px 0px;
     text-decoration: none;
     text-align: center;
     font-size: 13px;
@@ -232,9 +279,9 @@ footer{
 .linkedin-btn{
     text-align: right;
     border-width: 2px;
+    margin-right: 20px;
     color: #1a2530;
     border-radius: 8px;
-    padding: 4px;
     text-decoration: none;
     cursor: pointer;
     display: inline-flex;
@@ -249,4 +296,26 @@ footer{
         opacity: 1;
         transform: scale(1);
     }
+}
+
+.not-found{
+    display: inline-block;
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: auto;
+    border: #0077b6 solid 7px;
+    background-color: #0077b6;
+    border-radius: 12px;
+    align-items: start;
+}
+
+.not-block{
+    display: flex;
+    border: black solid 2px;
+    margin: 120px 500px;
+    align-items: center;
+}
+
+.not-text{
+    display: inline-block;
 }

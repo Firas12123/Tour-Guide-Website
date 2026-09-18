@@ -10,6 +10,12 @@ languages = {"EN": ["English"],
              }
 app = Flask(__name__)
 
+tours_data = [
+        {"title": "Cartage Ruins", "location": "Tunis", "price": {"EN": "£40", "DE": "€50"}},
+        {"title": "Roman Theatre of Cartage", "location": "Tunis", "price": {"EN": "£45", "DE": "€50"}},
+        {"title": "Sidi Bou Said", "location": "Coastal", "price": {"EN": "£42", "DE": "€50"}},
+    ]
+
 load_dotenv()
 app.secret_key = os.getenv("flask_secret_key")
 default_lang = "EN"
@@ -19,6 +25,13 @@ def set_language(lang):
     if lang in languages.keys():
         session["lang"] = lang
     return redirect(request.referrer or "/")
+
+@app.route("/tour_destination/<tour_name>")
+def tour_destination(tour_name):
+    for dict in tours_data:
+        if tour_name in dict.values():
+            return render_template("tour-card.html", tour= tour_name)
+    return render_template("not-found.html")
 
 @app.context_processor
 def inject_global():

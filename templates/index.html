@@ -7,23 +7,25 @@
 <header>
 
     <!-- external permanent html header-->
-
 </header>
 {% block content %}
 <main>
     <a class ="main-title main-font" href = "{{ url_for('booking') }}"> Book A Tour Today! </a>
     <section class ="tour-grid">
         {% for tour in tours %}
-        <div class ="tour-card">
+        <a class ="tour-card" href="{{ url_for('tour_destination', tour_name=tour.title) }}">
             <h2 class ="tour-title main-font">{{tour.title}}</h2>
-            <p class="tour-location main-font">{{tour.location}}</p>
-            <p class="tour-price main-font">from {{tour.price[active_lang] }}</p>
+            <div class ="tour-details">
+                <span class="tour-location main-font tour-text">{{tour.location}}</span>
+                <p class="tour-price tour-text">from
+                <span class ="main-font tour-text"> {{tour.price[active_lang] }} </span>
+                </p>
+            </div>
             <p> remember to fix the columns to align items next time </p>
-        </div>
+        </a>
         {% endfor %}
     </section>
 </main>
-
 {% endblock %}
 <!-- Permanent footer -->
 
