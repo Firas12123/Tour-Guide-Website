@@ -4,6 +4,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #ffffff;
+    z-index: 2;
 }
 
 .container{
@@ -24,20 +25,29 @@ body {
     font-size: 40px;
     padding: 8px;
     border-radius: 1rem;
-    margin-left: 20px;
+    margin-left: 27px;
     margin-right: auto;
     align-items: start;
 }
 
+.page-content{
+    display: flex;
+}
+
 .main-font{
     font-family: 'Inter', sans-serif;
+    font-size: 19px;
     letter-spacing: -1px;
     font-weight: 600;
     color: #1a2530;
 }
 
 .action-button{
-    color: #0077b6;
+    text-decoration: none;
+    background-color: #0077b6;
+    color: white;
+    padding: 6px;
+    border-radius: 9px;
 }
 
 html, body{
@@ -56,11 +66,12 @@ html, body{
     align-items: center;
     background-color: #ffffff;
     position: relative;
-    padding: 1rem 0rem;
+    min-height: 100px;
     margin-bottom: 30px;
     border-color: #222222;
     border-bottom: solid;
     border-width: 0.06rem;
+
 }
 
 .nav-links{
@@ -87,6 +98,22 @@ html, body{
 .teleporters:hover{
     color: #19222B;
     transform: scale(1.08);
+}
+
+.profile-button{
+    cursor: pointer;
+    background: transparent;
+    margin-right: 30px;
+    border: black solid 1.5px;
+    border-radius: 9px
+}
+
+.sign-in{
+    cursor: pointer;
+    background: transparent;
+    margin-right: 30px;
+    border: black solid 1.5px;
+    border-radius: 9px
 }
 
 .tour-grid{
@@ -155,12 +182,16 @@ html, body{
 }
 
 .lang-selector{
-    margin-right: 35px;
+    margin-right: 36px;
     display: inline-block;
     position: relative;
     align-items: center;
     margin-left: auto;
-    width: 150px;
+    width: 170px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    line-height: 1.2;
+    padding: 10px 0px;
     transition: transform 0.2s ease;
 }
 
@@ -317,7 +348,7 @@ footer{
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
-    margin: 85px 420px;
+    margin: 20px 0px;
     align-items: center;
     padding: 40px;
 }
@@ -330,7 +361,64 @@ footer{
 }
 
 .big-tour-card{
+    display: block;
+    flex-direction: column;
+    align-items: center;
     border: black solid 1px;
-    border-radius: 7px;
+    border-radius: 12px;
     margin: 25px 100px;
+
+}
+
+.booking-button{
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+footer{
+    min-height: 50px;
+}
+
+.login-form{
+    position: absolute;
+    border: black solid 1.5px;
+    border-radius: 9px;
+    min-height: 600px;
+    min-width: 600px;
+    left: 50%;
+    top: 50%;
+    background: white;
+    transform: translate(-50%, -60%);
+    visibility: hidden;
+    opacity: 0;
+    transition: transform 0.3s ease
+}
+
+.login-form.active{
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -65.73%)
+}
+
+.profile{
+
+}
+
+.cancel-button{
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 30px;
+    background: transparent;
+    height: 30px;
+    border: white;
+    border-radius: 50%;
+    transition: 0.2s ease;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.cancel-button:hover {
+    transform: scale(1.09);
+    background: #E0E0E0;
 }
