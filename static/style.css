@@ -387,10 +387,10 @@ footer{
     border: black solid 1.5px;
     border-radius: 9px;
     top: 50%;
-    width: 620px;
-    height: 620px;
-    max-height: 70vh;
-    max-width: 70vh;
+    width: 500px;
+    height: 680px;
+    max-height: 75vh;
+    max-width: 50vh;
     left: 50%;
     background: white;
     visibility: hidden;
@@ -421,6 +421,7 @@ footer{
 
 #details-info{
     position: relative;
+    margin-top: 5%;
     margin-right: auto;
     margin-left: 15%;
     color: #383838;
