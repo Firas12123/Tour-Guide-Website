@@ -381,24 +381,28 @@ footer{
 
 .login-form{
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: black solid 1.5px;
     border-radius: 9px;
-    min-height: 600px;
-    min-width: 600px;
-    left: 50%;
     top: 50%;
+    width: 620px;
+    height: 620px;
+    max-height: 70vh;
+    max-width: 70vh;
+    left: 50%;
     background: white;
-    transform: translate(-50%, -60%);
     visibility: hidden;
     opacity: 0;
     z-index: 30;
+    transform: translate(-50%, -50%);
     transition: transform 0.5s ease
 }
-
 .login-form.active{
     opacity: 1;
+    transform: translate(-50%, -50%);
     visibility: visible;
-    transform: translate(-50%, -65.73%)
 }
 
 .login-title{
@@ -411,28 +415,36 @@ footer{
 }
 
 #email-form{
-    position: absolute;
-    border: black solid 1.5px;
-    padding: 10px;
-    border-radius: 7px;
     right: 50%;
     transform: translateX(50%);
     top: 30%;
-    text-align: center;
-    font-size: 24px;
 
 }
 
 #password-form{
-    position: absolute;
-    border: black solid 1.5px;
-    padding: 10px;
-    border-radius: 7px;
     right: 50%;
     transform: translateX(50%);
     top: 55%;
+}
+
+#account-text{
+    right: 50%;
+    transform: translateX(50%);
+    top: 10%;
+}
+
+#password-form:focus{
+    outline: 0;
+}
+
+.login-shape{
+    position: absolute;
+    border: black solid 1.5px;
+    padding: 20px;
+    border-radius: 7px;
     text-align: center;
-    font-size: 24px;
+    font-size: 14px;
+    max-height: 1px;
 }
 
 #email-form:focus{
@@ -461,7 +473,7 @@ footer{
     color: #0077b6;
     border: 0;
     transition: 0.3s ease;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 #create-account:hover{
