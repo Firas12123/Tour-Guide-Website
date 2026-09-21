@@ -391,7 +391,8 @@ footer{
     transform: translate(-50%, -60%);
     visibility: hidden;
     opacity: 0;
-    transition: transform 0.3s ease
+    z-index: 30;
+    transition: transform 0.5s ease
 }
 
 .login-form.active{
@@ -400,12 +401,82 @@ footer{
     transform: translate(-50%, -65.73%)
 }
 
+.login-title{
+    position: absolute;
+    display: flex;
+    right: 50%;
+    transform: translateX(50%);
+    top: 9px;
+    font-size: 24px;
+}
+
+#email-form{
+    position: absolute;
+    border: black solid 1.5px;
+    padding: 10px;
+    border-radius: 7px;
+    right: 50%;
+    transform: translateX(50%);
+    top: 30%;
+    text-align: center;
+    font-size: 24px;
+
+}
+
+#password-form{
+    position: absolute;
+    border: black solid 1.5px;
+    padding: 10px;
+    border-radius: 7px;
+    right: 50%;
+    transform: translateX(50%);
+    top: 55%;
+    text-align: center;
+    font-size: 24px;
+}
+
+#email-form:focus{
+    outline: 0;
+}
+
+.login-info{
+    border: black solid 1px;
+    min-width: 500px;
+    min-height: 400px;
+    position: absolute;
+    right: 50%;
+    transform: translate(50%, -50%);
+    top: 50%;
+}
+
+#email-label{
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    top: 30%;
+}
+
+#create-account{
+    background: transparent;
+    color: #0077b6;
+    border: 0;
+    transition: 0.3s ease;
+    font-size: 15px;
+}
+
+#create-account:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+
+}
+
 .profile{
 
 }
 
 .cancel-button{
     position: absolute;
+    display: flex;
     top: 16px;
     right: 16px;
     width: 30px;
@@ -413,12 +484,29 @@ footer{
     height: 30px;
     border: white;
     border-radius: 50%;
-    transition: 0.2s ease;
     margin-left: auto;
     cursor: pointer;
 }
 
 .cancel-button:hover {
-    transform: scale(1.09);
     background: #E0E0E0;
+}
+
+#overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10;
+}
+
+#overlay.active{
+    opacity: 1;
+    visibility: visible;
 }

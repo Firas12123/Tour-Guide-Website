@@ -47,14 +47,23 @@
     {% block content%}
     {% endblock %}
 </main>
+<div id="overlay" ></div>
 <div class="login-form">
     <button type="button" class="cancel-button">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <line x1="2" y1="2" x2="22" y2="22"  style="stroke: black; stroke-width: 2;" />
-            <line x1="22" y1="2" x2="2" y2="22"  style="stroke: black; stroke-width: 2;" />
+          <line x1="4" y1="4" x2="20" y2="20" style="stroke: black; stroke-width: 2; stroke-linecap: round;" />
+            <line x1="20" y1="4" x2="4" y2="20" style="stroke: black; stroke-width: 2; stroke-linecap: round;" />
         </svg>
     </button>
-    <h1> test </h1>
+    <h1 class="main-font login-title">Nice to see you again!</h1>
+    <div class="login-info">
+        <label class="main-font" id="email-label">Email</label>
+        <input type="text" id="email-form" name="email-form" placeholder="Enter a valid email ">
+        <label class="main-font" id="password-label">Password</label>
+        <input type="text" id="password-form" name="password-form" placeholder="Enter a password ">
+        <p>Dont have an account?</p>
+        <button class="main-font" id="create-account">Create an account</button>
+    </div>
 </div>
 
 <footer>
