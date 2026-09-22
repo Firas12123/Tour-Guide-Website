@@ -635,3 +635,23 @@ footer{
     opacity: 1;
     visibility: visible;
 }
+
+#login-button{
+    background-color: #0077b6;
+    color: white;
+    -webkit-text-stroke: black 0.2px;
+    border: black solid 1px;
+    margin: 20px auto 0;
+    border-radius: 9px;
+    max-width: 40%;
+    max-height: 10%;
+    font-size: 20px;
+    padding: 6px 35px;
+    transition: 0.2s ease;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#login-button:hover{
+    transform: scale(1.02)
+}
