@@ -1,3 +1,18 @@
+{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.teleporters,
+.lang-selector,
+.main-title,
+.tour-card,
+#create-account {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
 body {
     margin: 0;
     min-height: 100vh;
@@ -202,7 +217,7 @@ html, body{
     min-width: 100%;
     right: 0;
     overflow: hidden;
-    z-index: 50;
+    z-index: 4;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-8px);
@@ -395,7 +410,7 @@ footer{
     background: white;
     visibility: hidden;
     opacity: 0;
-    z-index: 30;
+    z-index: 4;
     transform: translate(-50%, -45%);
     transition: transform 0s, 0.3s ease;
 }
@@ -407,7 +422,7 @@ footer{
 
 .login-head{
     position: relative;
-    z-index: 3;
+    z-index: 5;
     max-height: 55px;
 }
 
@@ -433,9 +448,43 @@ footer{
     text-align: center;
     max-width: 80%;
     margin: 0 auto;
+    box-sizing: border-box;
+    padding-right: 45px;
+}
+
+
+#password-box{
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: black solid 1px;
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+#toggle-password{
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.eye-icon{
+
+}
+
+#eye-open{
+    position: absolute;
+
+}
+
+#eye-closed{
+    position: absolute;
 }
 
 #account-text{
+    margin-top: 15%;
     text-align: center;
 }
 
@@ -492,16 +541,17 @@ footer{
 #create-account{
     background: transparent;
     color: #0077b6;
-    border: 20px;
+    border: black solid 1px;
     margin: -10px auto;
     border-radius: 9px;
     padding: 10px;
-    transition: 0.3s ease;
+    transition: 0.2s ease, color 0.2s;
     width: fit-content;
     font-size: 15px;
+    font-weight: 700;
 }
 
-#create-account:hover{
+#create-account:hover {
     transform: scale(1.03);
     background: #E0E0E0;
     cursor: pointer;
@@ -513,16 +563,25 @@ footer{
 
 .cancel-button{
     position: absolute;
-    display: flex;
     top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     right: 16px;
     width: 30px;
     background: transparent;
     height: 30px;
-    border: white;
+    border: none;
     border-radius: 50%;
     margin-left: auto;
     cursor: pointer;
+    z-index: 6;
+}
+
+.cancel-button svg{
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
 }
 
 .cancel-button:hover {
@@ -540,7 +599,7 @@ footer{
     backdrop-filter: blur(3px);
     opacity: 0;
     visibility: hidden;
-    z-index: 10;
+    z-index: 2;
 }
 
 #overlay.active{

@@ -62,8 +62,23 @@
         <div class="login-info">
             <label class="main-font" id="email-label">Email</label>
             <input class ="login-shape" type="text" id="email-form" name="email-form" placeholder="Enter a valid email ">
-            <label class="main-font" id="password-label">Password</label>
-            <input class ="login-shape" type="text" id="password-form" name="password-form" placeholder="Enter a password ">
+            <label class="main-font" id="password-label">Password
+            </label>
+            <div id="password-box">
+                <input class ="login-shape" type="text" id="password-form" name="password-form" placeholder="Enter a password" size="14">
+                <button id="toggle-password">
+                    <svg class="eye-icon" id="eye-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                        <circle cx="12" cy="12" r="3" />
+                    </svg>
+                    <svg class="eye-icon" id="eye-closed" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="2" y1="2" x2="22" y2="22" />
+                        <path d="M6.71 6.72C3.89 8.54 1 12 1 12s4 8 11 8c2.47 0 4.67-.84 6.44-2.12" />
+                        <path d="M10.73 5.08A10.43 10.43 0 0 1 12 4c7 0 11 8 11 8s-1.33 2.66-3.82 4.96" />
+                        <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24" />
+                    </svg>
+                </button>
+            </div>
             <p id="account-text" class="main-font">Dont have an account?</p>
             <button class="main-font" id="create-account">Create an account</button>
         </div>
