@@ -6,6 +6,9 @@ const pass_button = document.querySelector("#toggle-password");
 const eye_open = document.querySelector("#eye-open");
 const eye_closed = document.querySelector("#eye-closed");
 const show_password = document.getElementById("password-form")
+const login_button = document.getElementById("login-button")
+const email_submission = document.getElementById("email-form")
+const password_submission = document.getElementById("password-form")
 let seePassword = false
 
 
@@ -32,6 +35,27 @@ function passwordEye() {
     }
 }
 
+function sendDetails(email, password) {
+    fetch("/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"   // assigning JSON file
+        },
+        body: JSON.stringify({    // converts our email and password into a JSON string
+            email: email,
+            password: password
+        })
+    })
+}
+
+
+function getLogin() {
+    const email = email_submission.value
+    const password = password_submission.value
+
+    sendDetails(email, password)
+}
+
 
 
 // close the login page if called
@@ -42,12 +66,9 @@ function closeLogin(){
 
 // calling the functions
 myButton.addEventListener("click", loggedIn)
-if (myButton.textContent !== "My Profile"){
-    myButton.addEventListener("click", loggedIn)
-} else{
-    // do nothing yet on click
-}
 
+
+login_button.addEventListener("click", getLogin)
 pass_button.addEventListener("click", passwordEye)
 overlay.addEventListener("click", closeLogin)
 cancel.addEventListener("click", closeLogin)

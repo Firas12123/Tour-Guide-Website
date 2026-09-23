@@ -24,6 +24,15 @@ default_lang = "EN"
 def not_found_error(error):
     return render_template('not-found.html')
 
+@app.route("/", methods=["POST"])
+def check_login():
+    data = request.get_json()  # got the json from our JS POST request
+    email = data.get("email")
+    password = data.get("password")
+    
+    
+    
+
 @app.route("/set_langauge/<lang>")
 def set_language(lang):
     if lang in languages.keys():

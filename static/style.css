@@ -8,7 +8,8 @@
 .main-title,
 .tour-card,
 #toggle-password,
-#create-account {
+#create-account,
+#login-button{
   backface-visibility: hidden;
   transform: translateZ(0);
   will-change: transform;
@@ -441,7 +442,7 @@ footer{
     margin-right: auto;
     margin-left: 15%;
     color: #383838;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 #password-form{
@@ -452,28 +453,28 @@ footer{
     padding-right: 45px;
 }
 
-
-#password-box{
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 80%;
-    margin: 0 auto;
-
-}
-
-#email-box{
+.password-forms{
     position: relative;
     display: flex;
     align-items: center;
     width: 80%;
     margin: 0 auto;
 }
+
+.email-forms{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
 
 #toggle-password{
     position: absolute;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     top: 50%;
     transform: translateY(-50%);
     right: 11px;
@@ -492,25 +493,34 @@ footer{
 
 
 .eye-icon{
+    display: block;
     position: relative;
+    align-items: center;
 }
 
 #eye-open{
+    display: block;
     position: absolute;
     visibility: hidden;
+    align-items: center;
 }
 
 #eye-open.active{
+    display: block;
     visibility: visible;
+    align-items: center;
 }
 
 #eye-closed{
+    display: block;
     position: absolute;
     visibility: visible;
+    align-items: center;
 }
 
 #eye-closed.active{
     visibility: hidden;
+    align-items: center;
 }
 
 #account-text{
@@ -556,6 +566,7 @@ footer{
     display: flex;
     position: relative;
     flex-direction: column;
+
     min-width: 100%;
     margin-top: 20%;
     min-height: 60%;
@@ -576,13 +587,13 @@ footer{
     padding: 10px;
     transition: 0.2s ease, color 0.2s;
     width: fit-content;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 700;
 }
 
 #create-account:hover {
-    transform: scale(1.03);
-    background: #E0E0E0;
+    transform: scale(1.02);
+    background: #E8E8E8;
     cursor: pointer;
 }
 
@@ -647,7 +658,7 @@ footer{
     max-height: 10%;
     font-size: 20px;
     padding: 6px 35px;
-    transition: 0.2s ease;
+    transition: 0.3s ease;
     font-weight: 700;
     cursor: pointer;
 }

@@ -37,7 +37,6 @@
         </div>
         <div class="profile">
             <button class ="sign-in main-font" type ="button">
-                <span>Prof</span>
                 Sign In
             </button>
         </div>
@@ -61,23 +60,27 @@
         </div>
         <div class="login-info">
             <label class="main-font" id="email-label">Email</label>
-            <div id="email-box">
-                <input class ="login-shape" type="text" id="email-form" name="email-form" placeholder="Enter a valid email ">
+            <div>
+                <form class="email-forms" name="email">
+                     <input class ="login-shape" type="text" id="email-form" name="email-form" placeholder="Enter a valid email ">
+                </form>
             </div>
             <label class="main-font" id="password-label">Password</label>
-            <div id="password-box">
-                <input class ="login-shape" type="password" id="password-form" name="password-form" placeholder="Enter a password" size="14">
-                <button type="button" id="toggle-password">
-                    <svg class="eye-icon" id="eye-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                        <circle cx="12" cy="12" r="3" />
-                    </svg>
-                    <svg class="eye-icon" id="eye-closed" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="3" y1="3" x2="21" y2="21"></line>
-                        <path d="M2 12C2 12 6 5 12 5C18 5 22 12 22 12C22 12 18 19 12 19C6 19 2 12 2 12Z"></path>
-                        <circle cx="12" cy="12" r="3.5"></circle>
-                    </svg>
-                </button>
+            <div>
+                <form class="password-forms" name="password">
+                    <input class ="login-shape" type="password" id="password-form" name="password-form" placeholder="Enter a password" size="14">
+                    <button type="button" id="toggle-password">
+                        <svg class="eye-icon" id="eye-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                            <circle cx="12" cy="12" r="3" />
+                        </svg>
+                        <svg class="eye-icon" id="eye-closed" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="3" x2="21" y2="21"></line>
+                            <path d="M2 12C2 12 6 5 12 5C18 5 22 12 22 12C22 12 18 19 12 19C6 19 2 12 2 12Z"></path>
+                            <circle cx="12" cy="12" r="3.5"></circle>
+                        </svg>
+                    </button>
+                </form>
             </div>
             <button type="button" class="main-font" id="login-button">
                 Login
@@ -95,5 +98,5 @@
     </a>
 </footer>
 </body>
-<script type ="text/javascript" src ="static/main.js" defer></script>
+<script type ="text/javascript" src ="{{ url_for ('static', filename = 'main.js') }}" defer></script>
 </html>
