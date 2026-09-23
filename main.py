@@ -1,6 +1,7 @@
 from flask import Flask, redirect, render_template, session, request
 import os
 from dotenv import load_dotenv
+from database import db_sync, check_login
 
 languages = {"EN": ["English"],
              "DE": ["Deutsch"],
@@ -29,9 +30,9 @@ def check_login():
     data = request.get_json()  # got the json from our JS POST request
     email = data.get("email")
     password = data.get("password")
-    
-    
-    
+    cursor, connection = db_sync()
+    result = check_login(email, password, cursor, connection)
+
 
 @app.route("/set_langauge/<lang>")
 def set_language(lang):

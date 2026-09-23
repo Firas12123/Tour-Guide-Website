@@ -52,7 +52,6 @@ function sendDetails(email, password) {
 function getLogin() {
     const email = email_submission.value
     const password = password_submission.value
-
     sendDetails(email, password)
 }
 
