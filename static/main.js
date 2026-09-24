@@ -10,6 +10,8 @@ const login_button = document.getElementById("login-button")
 const email_submission = document.getElementById("email-form")
 const password_submission = document.getElementById("password-form")
 const error_message = document.getElementById("login-error")
+const email_error = document.getElementById("email-error")
+const empty_error = document.getElementById("empty-error")
 let seePassword = false
 
 
@@ -46,15 +48,32 @@ function sendDetails(email, password) {
             email: email,
             password: password})
     })
-    .then(response => response.json())
-    .then(data =>{
-        if (data.success){
-
+    .then(response => response.json()) //
+    .then(data =>{ // data is now the response json sent by Python
+        if (data.success === true){
+            login_form.classList.remove("active");
+            overlay.classList.remove("active");
+            empty_error.classList.remove("active");
         }// gets the success key and sees if its true or false
-        else{
-            error_message.classList.add("active")
+
+        else if (data.success === "error"){
+            email_error.classList.add("active");
+            error_message.classList.remove("active");
+            empty_error.classList.remove("active");
         }
-    })     // data is now the response json sent by Python
+
+        else if (data.success === "None"){
+            empty_error.classList.add("active");
+            error_message.classList.remove("active");
+            email_error.classList.remove("active");
+        }
+
+        else{
+            error_message.classList.add("active");
+            email_error.classList.remove("active");
+            empty_error.classList.remove("active");
+        }
+    })
 }
 
 
@@ -72,10 +91,18 @@ function closeLogin(){
     overlay.classList.remove("active");
 }
 
+function enterKey(event){
+    if (event.key === "Enter"){
+        event.preventDefault();  // stops the login page from closing
+        getLogin()  // instead calls getLogin function
+    }
+}
+
 // calling the functions
+
+email_submission.addEventListener("keydown", enterKey)
+password_submission.addEventListener("keydown", enterKey)
 myButton.addEventListener("click", loggedIn)
-
-
 login_button.addEventListener("click", getLogin)
 pass_button.addEventListener("click", passwordEye)
 overlay.addEventListener("click", closeLogin)

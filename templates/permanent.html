@@ -82,11 +82,15 @@
                     </button>
                 </form>
             </div>
-            <p class="main-font" id="login-error">Check your email and password info is correct please try again!</p>
+            <div id="error-messages">
+                <p class="main-font error_message" id="empty-error">Make sure the boxes aren't empty</p>
+                <p class="main-font error_message" id="login-error">Invalid email or password</p>
+                <p class="main-font error_message" id="email-error">Make sure you email includes '@' or ' . '</p>
+            </div>
             <button type="button" class="main-font" id="login-button">
                 Login
             </button>
-            <p id="account-text" class="main-font">Dont have an account?</p>
+            <p id="account-text" class="main-font">Don't have an account?</p>
             <button class="main-font" id="create-account">Create an account</button>
         </div>
 </div>

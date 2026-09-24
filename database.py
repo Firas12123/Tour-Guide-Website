@@ -19,7 +19,7 @@ def db_sync():
 def check_login(email, cursor, connection):
     cursor.execute("""SELECT password FROM users WHERE email = %s""",(email,))
     result = cursor.fetchone()
-    if result == None:
+    if result == None: # if there's no password for the email used
         return False
     else:
         return result[0]

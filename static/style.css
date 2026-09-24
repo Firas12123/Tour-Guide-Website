@@ -667,14 +667,42 @@ footer{
     transform: scale(1.02)
 }
 
-#login-error{
+#error-messages{
     position: relative;
-    margin: auto;
-    color: red;
+    width: 100%;
+    margin: 4px 0 18px;
+}
+
+.error_message{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    white-space: nowrap;
+    transform: translate(-50%, -50%);
+    color: #EF4444;
     font-size: 14px;
+}
+
+#login-error{
     visibility: hidden;
 }
 
 #login-error.active{
+    visibility: visible;
+}
+
+#email-error{
+    visibility: hidden;
+}
+
+#email-error.active{
+    visibility: visible;
+}
+
+#empty-error{
+    visibility: hidden;
+}
+
+#empty-error.active{
     visibility: visible;
 }

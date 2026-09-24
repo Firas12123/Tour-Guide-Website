@@ -5,7 +5,7 @@ from database import db_sync, check_login
 import werkzeug.security
 from werkzeug.security import check_password_hash
 
-#db_sync()
+db_sync()
 
 languages = {"EN": ["English"],
              "DE": ["Deutsch"],
@@ -33,14 +33,20 @@ def not_found_error():
 def web_login():
     data = request.get_json()  # got the json from our JS POST request
     email = data.get("email")
-    user_password = data.get("password")
-    cursor, connection = db_sync()
-    password = check_login(email, cursor, connection)
-    if password != False:
-        result = check_password_hash(password, user_password)
-        return jsonify({"Success": result})
+    print(email)
+    if email == "":
+        return jsonify({"success": "None"})
     else:
-        return jsonify({"Success": False})
+        if "@" not in email or "." not in email:
+            return jsonify({"success": "error"})
+        user_password = data.get("password")
+        cursor, connection = db_sync()
+        password = check_login(email, cursor, connection)
+        if password:
+            result = check_password_hash(password, user_password)
+            return jsonify({"success": result})
+        else:
+            return jsonify({"success": False})
         
 @app.route("/set_langauge/<lang>")
 def set_language(lang):
