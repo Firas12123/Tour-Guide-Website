@@ -1,7 +1,11 @@
-from flask import Flask, redirect, render_template, session, request
+from flask import Flask, redirect, render_template, session, request, jsonify
 import os
 from dotenv import load_dotenv
 from database import db_sync, check_login
+import werkzeug.security
+from werkzeug.security import check_password_hash
+
+#db_sync()
 
 languages = {"EN": ["English"],
              "DE": ["Deutsch"],
@@ -22,18 +26,22 @@ app.secret_key = os.getenv("flask_secret_key")
 default_lang = "EN"
 
 @app.errorhandler(404)
-def not_found_error(error):
+def not_found_error():
     return render_template('not-found.html')
 
 @app.route("/", methods=["POST"])
-def check_login():
+def web_login():
     data = request.get_json()  # got the json from our JS POST request
     email = data.get("email")
-    password = data.get("password")
+    user_password = data.get("password")
     cursor, connection = db_sync()
-    result = check_login(email, password, cursor, connection)
-
-
+    password = check_login(email, cursor, connection)
+    if password != False:
+        result = check_password_hash(password, user_password)
+        return jsonify({"Success": result})
+    else:
+        return jsonify({"Success": False})
+        
 @app.route("/set_langauge/<lang>")
 def set_language(lang):
     if lang in languages.keys():
@@ -79,6 +87,9 @@ def booking():
 def contact():
     return render_template("contact.html")
     
+def hash_pass(user_password):
+    new_pass = werkzeug.security.generate_password_hash(user_password)
+    return new_pass
 
 if __name__ == "__main__":
     app.run(debug = True)

@@ -4,8 +4,6 @@ import os
 
 load_dotenv()
 
-
-
 def db_sync():
     connection = psycopg.connect(os.getenv("postgr_login"))
     cursor = connection.cursor()
@@ -18,5 +16,11 @@ def db_sync():
     connection.commit()
     return cursor, connection
 
-def check_login(email, password, cursor, connection):
-    cursor.execute("""SELECT email FROM """)
+def check_login(email, cursor, connection):
+    cursor.execute("""SELECT password FROM users WHERE email = %s""",(email,))
+    result = cursor.fetchone()
+    if result == None:
+        return False
+    else:
+        return result[0]
+    

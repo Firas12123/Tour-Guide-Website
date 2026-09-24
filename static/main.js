@@ -9,6 +9,7 @@ const show_password = document.getElementById("password-form")
 const login_button = document.getElementById("login-button")
 const email_submission = document.getElementById("email-form")
 const password_submission = document.getElementById("password-form")
+const error_message = document.getElementById("login-error")
 let seePassword = false
 
 
@@ -43,9 +44,17 @@ function sendDetails(email, password) {
         },
         body: JSON.stringify({    // converts our email and password into a JSON string
             email: email,
-            password: password
-        })
+            password: password})
     })
+    .then(response => response.json())
+    .then(data =>{
+        if (data.success){
+
+        }// gets the success key and sees if its true or false
+        else{
+            error_message.classList.add("active")
+        }
+    })     // data is now the response json sent by Python
 }
 
 

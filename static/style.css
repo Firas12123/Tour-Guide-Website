@@ -666,3 +666,15 @@ footer{
 #login-button:hover{
     transform: scale(1.02)
 }
+
+#login-error{
+    position: relative;
+    margin: auto;
+    color: red;
+    font-size: 14px;
+    visibility: hidden;
+}
+
+#login-error.active{
+    visibility: visible;
+}
