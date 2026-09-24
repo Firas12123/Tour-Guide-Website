@@ -47,7 +47,8 @@
     {% endblock %}
 </main>
 <div id="overlay" ></div>
-<div class="login-form">
+<!-- LOGIN PAGE -->
+<div id="login-form" class="form-template">
         <button type="button" class="cancel-button">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <line x1="4" y1="4" x2="20" y2="20" style="stroke: black; stroke-width: 2; stroke-linecap: round;" />
@@ -55,18 +56,18 @@
             </svg>
         </button>
         <div class="login-head">
-            <p id="details-info" class="main-font"> Please enter your details in the boxes below </p>
-            <h1 class="main-font" id="login-title">Welcome back!</h1>
+            <p class="details-info main-font"> Please enter your details below </p>
+            <h1 class="main-font form-title">Welcome back!</h1>
         </div>
-        <div class="login-info">
-            <label class="main-font" id="email-label">Email</label>
-            <div>
+        <div class="info-template">
+            <div id="login-ediv">
+                <label class="main-font" id="email-label">Email</label>
                 <form class="email-forms" name="email">
                      <input class ="login-shape" type="text" id="email-form" name="email-form" placeholder="Enter a valid email ">
                 </form>
             </div>
-            <label class="main-font" id="password-label">Password</label>
-            <div>
+            <div id="password-div">
+                <label class="main-font" id="password-label">Password</label>
                 <form class="password-forms" name="password">
                     <input class ="login-shape" type="password" id="password-form" name="password-form" placeholder="Enter a password" size="14">
                     <button type="button" id="toggle-password">
@@ -85,14 +86,67 @@
             <div id="error-messages">
                 <p class="main-font error_message" id="empty-error">Make sure the boxes aren't empty</p>
                 <p class="main-font error_message" id="login-error">Invalid email or password</p>
-                <p class="main-font error_message" id="email-error">Make sure you email includes '@' or ' . '</p>
+                <p class="main-font error_message" id="email-error">Make sure your email is the correct format</p>
             </div>
             <button type="button" class="main-font" id="login-button">
                 Login
             </button>
             <p id="account-text" class="main-font">Don't have an account?</p>
-            <button class="main-font" id="create-account">Create an account</button>
+            <button type="button" class="main-font" id="create-account">Create an account</button>
         </div>
+</div>
+<!-- CREATE ACCOUNT PAGE  -->
+<div class ="form-template" id="create-form">
+    <button type="button" id="create-account-button" class="cancel-button">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <line x1="4" y1="4" x2="20" y2="20" style="stroke: black; stroke-width: 2; stroke-linecap: round;" />
+                <line x1="20" y1="4" x2="4" y2="20" style="stroke: black; stroke-width: 2; stroke-linecap: round;" />
+            </svg>
+        </button>
+    <div class="login-head">
+        <p class="details-info main-font"> Please enter your details below </p>
+        <h1 class="main-font form-title">Sign Up Today!</h1>
+    </div>
+    <div>
+        <div class="names-create">
+            <div class="name-div">
+                <label class="main-font" id="firstname-id">First name</label>
+                <form id="first-name">
+                    <input class="name-input names-shape" id="c-first-name" name="first-name" placeholder="Enter first name" size="14">
+                </form>
+            </div>
+            <div class="name-div">
+                <label class="main-font" id="lastname-label">Last name</label>
+                <form id="last-name">
+                    <input class="name-input names-shape" id="c-last-name" name="last-name" placeholder="Enter last name" size="14">
+                </form>
+            </div>
+        </div>
+        <div id="c-email-div">
+            <label class="main-font" id="email-c-label">Email</label>
+            <form id="c-email-forms" name="c-email">
+                 <input class ="login-shape" type="text" id="c-email-form" name="email-form" placeholder="Enter a valid email ">
+            </form>
+        </div>
+        <div id="c-pass-div">
+            <label class="main-font" id="password-c-label">Password</label>
+            <form id="c-creat-pass" name="password">
+                <input class ="login-shape" type="password" id="c-password-form" name="password-form" placeholder="Enter a password" size="14">
+                <button type="button" id="c-toggle-password">
+                    <svg class="eye-icon" id="c-eye-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                        <circle cx="12" cy="12" r="3" />
+                    </svg>
+                    <svg class="eye-icon" id="c-eye-closed" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="3" x2="21" y2="21"></line>
+                        <path d="M2 12C2 12 6 5 12 5C18 5 22 12 22 12C22 12 18 19 12 19C6 19 2 12 2 12Z"></path>
+                        <circle cx="12" cy="12" r="3.5"></circle>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
 </div>
 <footer>
     <p class="main-font my-name" style="font-size: 16px;"> © 2026 - By Firas Costa</p>

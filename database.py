@@ -11,8 +11,8 @@ def db_sync():
                     id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
                     email TEXT NOT NULL UNIQUE CHECK(length(email) <=254),  
                     password TEXT NOT NULL,
-                    firstName TEXT,
-                    lastName TEXT)""") # checks if email is within internet legal limit and not duplicate or empty
+                    firstName TEXT NOT NULL,
+                    lastName TEXT NOT NULL)""") # checks if email is within internet legal limit and not duplicate or empty
     connection.commit()
     return cursor, connection
 
