@@ -7,8 +7,10 @@
 .lang-selector,
 .main-title,
 .tour-card,
+#create-account-logp,
 #toggle-password,
 #create-account,
+#create-form,
 #login-button{
   backface-visibility: hidden;
   transform: translateZ(0);
@@ -423,6 +425,10 @@ footer{
     transition: none;
 }
 
+.no-trans{
+    transition: none !important;
+}
+
 #login-form.active{
     opacity: 1;
     transform: translate(-50%, -53.5%);
@@ -501,6 +507,11 @@ footer{
 #c-creat-pass{
     position: relative;
     margin: auto;
+}
+
+#c-first-name{
+    position: relative;
+    max-width: 100%;
 }
 
 #c-password-form{
@@ -627,7 +638,7 @@ footer{
 
 
 #account-text{
-    margin-top: 15%;
+    margin-top: 20px;
     text-align: center;
 }
 
@@ -642,6 +653,10 @@ footer{
     width: 100%;
     margin: 0 auto;
     padding-right: 45px;
+}
+
+#login-button{
+    margin-top: -20px;
 }
 
 .login-shape{
@@ -694,22 +709,28 @@ footer{
     padding: 10px;
     border-radius: 7px;
     font-size: 14px;
-    flex: 1;
 }
 
 .name-div{
-    display: flex;
-    flex-direction: column;
+    display: inline-block;
     align-items: center;
-    flex: 1;
+    box-sizing: border-box;
+}
+
+#left-name{
+    margin-left: auto;
+    box-sizing: border-box;
+    width: 40%;
+}
+
+#right-name{
+    margin-right: auto;
+    box-sizing: border-box;
+    width: 40%;
 }
 
 #firstname-id{
-    margin-left: -12%;
-}
-
-#first-name{
-    margin-left: 10%;
+     margin-left: 6%;
 }
 
 .name-input{
@@ -718,11 +739,11 @@ footer{
 }
 
 #lastname-label{
-    margin-left: -31%;
+    margin-left: 6%;
 }
 
 #last-name{
-    margin-right: 10%;
+    max-width: 20%;
 }
 
 #email-form:focus{
@@ -734,7 +755,7 @@ footer{
     position: relative;
     flex-direction: column;
     min-width: 100%;
-    margin-top: 20%;
+    margin-top: 12%;
     min-height: 60%;
 }
 
@@ -764,6 +785,25 @@ footer{
 }
 
 #create-account:hover {
+    transform: scale(1.02);
+    background: #E8E8E8;
+    cursor: pointer;
+}
+
+.login-page-button{
+    background: transparent;
+    color: #0077b6;
+    border: black solid 1px;
+    margin: -10px auto;
+    border-radius: 9px;
+    padding: 10px;
+    transition: 0.2s ease, color 0.2s;
+    width: fit-content;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+#login-page-button:hover{
     transform: scale(1.02);
     background: #E8E8E8;
     cursor: pointer;
@@ -820,19 +860,7 @@ footer{
 }
 
 #login-button{
-    background-color: #0077b6;
-    color: white;
-    -webkit-text-stroke: black 0.2px;
-    border: black solid 1px;
-    margin: 20px auto 0;
-    border-radius: 9px;
-    max-width: 40%;
-    max-height: 10%;
-    font-size: 20px;
-    padding: 6px 35px;
-    transition: 0.3s ease;
-    font-weight: 700;
-    cursor: pointer;
+
 }
 
 #login-button:hover{
@@ -842,17 +870,20 @@ footer{
 #error-messages{
     position: relative;
     width: 100%;
-    margin: 4px 0 18px;
+    text-align: center;
+    height: 20px;
+    margin: -15px 0 30px;
 }
 
 .error_message{
     position: absolute;
-    left: 50%;
-    top: 50%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    margin: 0;
     white-space: nowrap;
-    transform: translate(-50%, -50%);
     color: #EF4444;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 #login-error{
@@ -877,4 +908,46 @@ footer{
 
 #empty-error.active{
     visibility: visible;
+}
+
+#log-back-in{
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+#create-account-logp{
+    margin: 30px auto 0;
+    align-items: center;
+    max-width: 80%;
+}
+
+.login-button{
+    background-color: #0077b6;
+    color: white;
+    -webkit-text-stroke: black 0.2px;
+    border: black solid 1px;
+    margin: 20px auto 0;
+    border-radius: 9px;
+    max-width: 40%;
+    max-height: 10%;
+    font-size: 20px;
+    padding: 6px 35px;
+    transition: 0.3s ease;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.log-back-in:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+#log-back-div{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#log-back-text{
+    margin: 20px auto;
 }

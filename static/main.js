@@ -1,13 +1,14 @@
 const sign_in = document.querySelector(".sign-in");
 const login_form = document.getElementById("login-form");
-const overlay = document.querySelector("#overlay");
+const overlay = document.getElementById("overlay");
 const cancel = document.querySelector(".cancel-button");
-const pass_button = document.querySelector("#toggle-password");
-const eye_open = document.querySelector("#eye-open");
-const eye_closed = document.querySelector("#eye-closed");
-const c_eye_open = document.querySelector("#c-eye-open");
-const c_eye_closed = document.querySelector("#c-eye-closed");
+const pass_button = document.getElementById("toggle-password");
+const eye_open = document.getElementById("eye-open");
+const eye_closed = document.getElementById("eye-closed");
+const c_eye_open = document.getElementById("c-eye-open");
+const c_eye_closed = document.getElementById("c-eye-closed");
 const show_password = document.getElementById("password-form")
+const c_show_password = document.getElementById("c-password-form")
 const login_button = document.getElementById("login-button")
 const email_submission = document.getElementById("email-form")
 const password_submission = document.getElementById("password-form")
@@ -17,8 +18,10 @@ const empty_error = document.getElementById("empty-error")
 const create_account = document.getElementById("create-account")
 const create_form = document.getElementById("create-form")
 const create_account_cancel = document.getElementById("create-account-button")
+const log_back = document.getElementById("log-back-in")
+const c_toggle_password = document.getElementById("c-toggle-password")
 let seePassword = false
-
+let createPassword = false
 
 // opening the login form and bluring the background if called
 function loggedIn(){
@@ -39,6 +42,21 @@ function passwordEye() {
         eye_open.classList.remove("active")
         eye_closed.classList.remove("active")
         show_password.type ="password"
+    }
+}
+
+function CreatepasswordEye() {
+    createPassword = !createPassword
+    if (createPassword === true){
+        c_eye_open.classList.add("active")
+        c_eye_closed.classList.add("active")
+        c_show_password.type = "text"
+
+    }
+    else{
+        c_eye_open.classList.remove("active")
+        c_eye_closed.classList.remove("active")
+        c_show_password.type ="password"
     }
 }
 
@@ -92,9 +110,18 @@ function getLogin() {
 
 // close the login page if called
 function closeLogin(){
-    login_form.classList.remove("active");
+    login_form.classList.remove("active","no-trans", "hide");
     overlay.classList.remove("active");
     create_form.classList.remove("active", "switch")
+}
+
+function openLogin(){
+    create_form.classList.add("no-trans")
+    create_form.classList.remove("switch")
+    create_form.offsetWidth // commits the display without transitioning
+    create_form.classList.remove("no-trans")
+    login_form.classList.remove("hide")
+    login_form.classList.add("active")
 }
 
 function enterKey(event){
@@ -111,12 +138,14 @@ function createAccount(){
 }
 
 // calling the functions
+log_back.addEventListener("click", openLogin)
 create_account.addEventListener("click", createAccount)
 email_submission.addEventListener("keydown", enterKey)
 password_submission.addEventListener("keydown", enterKey)
 sign_in.addEventListener("click", loggedIn)
 login_button.addEventListener("click", getLogin)
 pass_button.addEventListener("click", passwordEye)
+c_toggle_password.addEventListener("click", CreatepasswordEye)
 overlay.addEventListener("click", closeLogin)
 cancel.addEventListener("click", closeLogin)
 create_account_cancel.addEventListener("click", closeLogin)
