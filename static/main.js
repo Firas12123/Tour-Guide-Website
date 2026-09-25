@@ -20,6 +20,12 @@ const create_form = document.getElementById("create-form")
 const create_account_cancel = document.getElementById("create-account-button")
 const log_back = document.getElementById("log-back-in")
 const c_toggle_password = document.getElementById("c-toggle-password")
+// account creation user forms
+const first_n = document.getElementById("c-first-name")
+const last_n = document.getElementById("c-last-name")
+const created_e = document.getElementById("c-email-form")
+const created_pass = document.getElementById("c-password-form")
+const create_account_button = document.getElementById("create-account-logp")
 let seePassword = false
 let createPassword = false
 
@@ -106,7 +112,28 @@ function getLogin() {
     sendDetails(email, password)
 }
 
+function getAccountDeets(){
+    const first_name = first_n.value
+    const last_name = last_n.value
+    const user_email = created_e.value
+    const user_password = created_pass.value
+    saveAccount(first_name, last_name, user_email, user_password)
+}
 
+function saveAccount(first_name, last_name, user_email, user_password){
+    fetch("/", {
+        method : "POST",
+        headers:{
+            "Content-Type" : "application/json"
+        },
+        body: JSON.stringify({
+            first_name: first_name,
+            last_name: last_name,
+            user_email: user_email,
+            user_password: user_password
+        })
+    })
+}
 
 // close the login page if called
 function closeLogin(){
@@ -138,6 +165,7 @@ function createAccount(){
 }
 
 // calling the functions
+create_account_button.addEventListener("click", getAccountDeets)
 log_back.addEventListener("click", openLogin)
 create_account.addEventListener("click", createAccount)
 email_submission.addEventListener("keydown", enterKey)
