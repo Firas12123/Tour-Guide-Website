@@ -83,16 +83,18 @@
                     </button>
                 </form>
             </div>
-            <div id="error-messages">
-                <p class="main-font error_message" id="empty-error">Fill in all the boxes</p>
-                <p class="main-font error_message" id="login-error">Invalid email or password</p>
-                <p class="main-font error_message" id="email-error">Make sure your email is the correct format</p>
+            <div id="bottom-ofpage">
+                <div id="error-messages">
+                    <p class="main-font error_message" id="empty-error">Fill in all the boxes</p>
+                    <p class="main-font error_message" id="login-error">Invalid email or password</p>
+                    <p class="main-font error_message" id="email-error">Make sure your email is the correct format</p>
+                </div>
+                <button type="button" class="main-font login-button shape-sizes" id="login-button">
+                    Login
+                </button>
+                <p id="account-text" class="main-font">Don't have an account?</p>
+                <button type="button" class="main-font shape-sizes" id="create-account">Create an account</button>
             </div>
-            <button type="button" class="main-font login-button" id="login-button">
-                Login
-            </button>
-            <p id="account-text" class="main-font">Don't have an account?</p>
-            <button type="button" class="main-font" id="create-account">Create an account</button>
         </div>
 </div>
 <!-- CREATE ACCOUNT PAGE  -->
@@ -112,13 +114,13 @@
             <div class="name-div" id="left-name">
                 <label class="main-font" id="firstname-id">First name</label>
                 <form id="first-name">
-                    <input class="name-input names-shape" id="c-first-name" placeholder="Enter first name" size="14">
+                    <input class="name-input names-shape" id="c-first-name" placeholder="Enter first name">
                 </form>
             </div>
             <div class="name-div" id="right-name">
                 <label class="main-font" id="lastname-label">Last name</label>
                 <form id="last-name">
-                    <input class="name-input names-shape" id="c-last-name" placeholder="Enter last name" size="14">
+                    <input class="name-input names-shape" id="c-last-name" placeholder="Enter last name">
                 </form>
             </div>
         </div>
@@ -147,11 +149,11 @@
         </div>
     </div>
     <div id="log-back-div">
-         <button class="login-button" id="create-account-logp">
+         <button class="login-button shape-sizes" id="create-account-logp">
             Create Account
         </button>
         <p class="main-font" id="log-back-text">Changed your mind?</p>
-        <button class="main-font login-page-button" type="button" id="log-back-in">Log back in</button>
+        <button class="main-font login-page-button shape-sizes" type="button" id="log-back-in">Log back in</button>
     </div>
 </div>
 <footer>
@@ -163,5 +165,5 @@
     </a>
 </footer>
 </body>
-<script type ="text/javascript" src ="{{ url_for ('static', filename = 'main.js') }}" defer></script>
+<script src ="{{ url_for ('static', filename = 'main.js') }}" defer></script>
 </html>

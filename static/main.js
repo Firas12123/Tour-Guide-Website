@@ -105,6 +105,9 @@ function sendDetails(email, password) {
 }
 
 
+function saveAccount(first_name, last_name, user_email, user_password){
+
+}
 
 function getLogin() {
     const email = email_submission.value
@@ -118,21 +121,6 @@ function getAccountDeets(){
     const user_email = created_e.value
     const user_password = created_pass.value
     saveAccount(first_name, last_name, user_email, user_password)
-}
-
-function saveAccount(first_name, last_name, user_email, user_password){
-    fetch("/", {
-        method : "POST",
-        headers:{
-            "Content-Type" : "application/json"
-        },
-        body: JSON.stringify({
-            first_name: first_name,
-            last_name: last_name,
-            user_email: user_email,
-            user_password: user_password
-        })
-    })
 }
 
 // close the login page if called

@@ -1,19 +1,21 @@
+<<<<<<< HEAD
 body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+=======
+>>>>>>> 4a27f4c (update)
 .teleporters,
 .lang-selector,
 .main-title,
 .tour-card,
+.lang-dropdown,
 #create-account-logp,
 #toggle-password,
 #create-account,
 #create-form,
 #login-button{
-  backface-visibility: hidden;
-  transform: translateZ(0);
   will-change: transform;
 }
 
@@ -486,7 +488,8 @@ footer{
     display: inline-block;
     align-items: center;
     width: 100%;
-    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 #login-ediv{
@@ -494,7 +497,13 @@ footer{
     display: inline-block;
     align-items: center;
     width: 100%;
-    margin: auto;
+    margin-top: 10%;
+}
+
+#bottom-ofpage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .password-forms{
@@ -511,7 +520,7 @@ footer{
 
 #c-first-name{
     position: relative;
-    max-width: 100%;
+    width: 100%;
 }
 
 #c-password-form{
@@ -697,11 +706,16 @@ footer{
 .names-create{
     position: relative;
     display: flex;
-    margin-top: 20%;
+    margin: 20% auto 0;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 80%;
     gap: 12px;
+}
+
+.shape-sizes{
+    width: 220px;
+    box-sizing: border-box;
 }
 
 .names-shape{
@@ -709,6 +723,8 @@ footer{
     padding: 10px;
     border-radius: 7px;
     font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .name-div{
@@ -718,15 +734,13 @@ footer{
 }
 
 #left-name{
-    margin-left: auto;
     box-sizing: border-box;
-    width: 40%;
+    width: 45%;
 }
 
 #right-name{
-    margin-right: auto;
     box-sizing: border-box;
-    width: 40%;
+    width: 45%;
 }
 
 #firstname-id{
@@ -743,7 +757,7 @@ footer{
 }
 
 #last-name{
-    max-width: 20%;
+    max-width: 100%;
 }
 
 #email-form:focus{
@@ -779,7 +793,6 @@ footer{
     border-radius: 9px;
     padding: 10px;
     transition: 0.2s ease, color 0.2s;
-    width: fit-content;
     font-size: 18px;
     font-weight: 700;
 }
@@ -798,7 +811,6 @@ footer{
     border-radius: 9px;
     padding: 10px;
     transition: 0.2s ease, color 0.2s;
-    width: fit-content;
     font-size: 18px;
     font-weight: 700;
 }
@@ -911,7 +923,7 @@ footer{
 }
 
 #log-back-in{
-    transform: scale(1.02);
+    position: relative;
     cursor: pointer;
 }
 
@@ -928,8 +940,6 @@ footer{
     border: black solid 1px;
     margin: 20px auto 0;
     border-radius: 9px;
-    max-width: 40%;
-    max-height: 10%;
     font-size: 20px;
     padding: 6px 35px;
     transition: 0.3s ease;
